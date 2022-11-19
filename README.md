@@ -1,5 +1,12 @@
-I and my team mate handled some under the hood features and algorithms whatactually work inside a shell. 
+The Basics
 
-All Linux operating systems have a terminal window to write in commands. But how are they executed properly after they are entered?
+After a command is entered, the following things are done:
+Command is entered and if length is non-null, keep it in history.
 
-Also, how are extra features like keeping the history of commands and showing help handled? All of this can be understood by creating your own shell.
+Parsing : Parsing is the breaking up of commands into individual words and strings
+Checking for special characters like pipes, etc is done
+Checking if built-in commands are asked for.
+If pipes are present, handling pipes.
+Executing system commands and libraries by forking a child and calling execvp.
+Printing current directory name and asking for next input.
+For keeping history of commands, recovering history using arrow keys and handling autocomplete using the tab key, we will be using the readline library provided by GNU.
